@@ -15,7 +15,14 @@ este dato puede ser diferente al oficial.
 """
 
 
-def curp(names: str, lastname: str, second_lastname: str, brith_date: str, birth_state: str, sex: str) -> str:
+def curp(
+    names: str,
+    lastname: str,
+    second_lastname: str,
+    brith_date: str,
+    birth_state: str,
+    sex: str,
+) -> str:
     """Devuelve el CURP bien formado usando los datos básicos.
     Nota: el dígito verificador no es correcto porque es asignado al momento de
     creación y registro del curp por una entidad nacional.
