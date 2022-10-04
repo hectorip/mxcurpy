@@ -5,6 +5,7 @@ from utilities import (
     get_first_consonant,
     get_first_vowel,
 )
+from mxcurpy import _generate_first_part
 
 
 @pytest.mark.parametrize("t_input,expected", (("á", "a"), ("é", "e")))
@@ -43,3 +44,15 @@ def test_extract_first_consonant(t_input, expected):
 )
 def test_extract_first_vowel(t_input, expected):
     assert get_first_vowel(t_input) == expected
+
+
+@pytest.mark.parametrize(
+    "t_input,expected",
+    (
+        (("Héctor Iván", "Patricio", "Moreno"), "pamh"),
+        (("Armando", "Palermo", "Torres"), "pata"),
+    ),
+)
+def test_generate_first_part(t_input, expected):
+    names, lastname, second_lastname = t_input
+    assert _generate_first_part(names, lastname, second_lastname) == expected

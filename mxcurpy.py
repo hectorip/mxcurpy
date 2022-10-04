@@ -14,6 +14,14 @@ este dato puede ser diferente al oficial.
 
 """
 
+from utilities import get_first_consonant, get_first_vowel, clean_and_format_string
+
+
+def _generate_first_part(names, lastname, second_lastname):
+    return clean_and_format_string(
+        f"{lastname[0]}{get_first_vowel(lastname)}{second_lastname[0]}{names[0]}"
+    )
+
 
 def curp(
     names: str,
