@@ -51,6 +51,7 @@ def test_extract_first_vowel(t_input, expected):
     (
         (("Héctor Iván", "Patricio", "Moreno"), "pamh"),
         (("Armando", "Palermo", "Torres"), "pata"),
+        (("Héctor Iván", "Patricio", ""), "paxh"),
     ),
 )
 def test_generate_first_part(t_input, expected):

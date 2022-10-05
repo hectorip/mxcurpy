@@ -17,7 +17,12 @@ este dato puede ser diferente al oficial.
 from utilities import get_first_consonant, get_first_vowel, clean_and_format_string
 
 
-def _generate_first_part(names, lastname, second_lastname):
+def _generate_first_part(names, lastname, second_lastname=""):
+
+    # Puede que algunos usuarios no tengan segundo apellido, y se tiene que usar una X
+    # Ponemos la "x" para extraerla como primera letra.
+    if not second_lastname:
+        second_lastname = "x"
     return clean_and_format_string(
         f"{lastname[0]}{get_first_vowel(lastname)}{second_lastname[0]}{names[0]}"
     )
