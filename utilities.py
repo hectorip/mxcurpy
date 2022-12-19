@@ -2,7 +2,7 @@ from re import A
 from string import ascii_letters, ascii_lowercase
 
 LETTERS = set(ascii_letters)
-ACCENTED_VOWELS = {"á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u"}
+ACCENTED_VOWELS = {"á": "a", "é": "e", "í": "i", "ó": "o","ü": "u", "ú": "u"}
 VOWELS = set(("a", "e", "i", "o", "u"))
 
 
