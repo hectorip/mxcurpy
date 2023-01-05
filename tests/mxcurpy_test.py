@@ -83,3 +83,9 @@ def test_generate_common_part(t_input, expected):
     assert (
         _generate_common_part(names, lastname, second_lastname, birth_date) == expected
     )
+
+
+def testingBoolean():
+    a = True
+    if a == "True":
+        print("True")
