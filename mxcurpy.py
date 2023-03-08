@@ -15,8 +15,6 @@ este dato puede ser diferente al oficial.
 """
 
 from utilities import (
-    cleaned_string,
-    get_first_consonant,
     get_first_vowel,
     clean_and_format_string,
 )
@@ -57,7 +55,7 @@ def curp(
     names: str,
     lastname: str,
     second_lastname: str,
-    brith_date: str,
+    birth_date: str,
     birth_state: str,
     sex: str,
 ):
@@ -76,8 +74,8 @@ def curp(
     birth_date
         Es la fecha de nacimiento de la persona en formato "dd-MM-yyyy", por ejemplo "27-01-1980"
     birth_state
-        Es el código del estado de nacimiento de la persona. La lista de códigos aceptados la
-        puedes sacar de aquí: TODO: Falta la lista oficial de códigos de estados.
+        Es el código del estado de nacimiento de la persona. La lista de códigos aceptados
+        la puedes sacar de aquí: TODO: Falta la lista oficial de códigos de estados.
     sex
         Es el sexo de la persona, acepta 'H' o 'h' para hombres y 'M' o 'm' para mujeres.
     Returns
@@ -85,7 +83,7 @@ def curp(
     bool
         True if successful, False otherwise.
     """
-    first_half = _generate_common_part(names, lastname, second_lastname, birth_date)
-    if sex not in ("h", "H", "m", "n"):
+    _generate_common_part(names, lastname, second_lastname, birth_date)
+    if sex not in ("h", "H", "m", "M"):
         raise "Sex formatting is incorrect, must be an 'h' form men or a 'm' for women"
-    second_half = f"{sex}"
+    # f"{sex}"
