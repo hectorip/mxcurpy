@@ -34,7 +34,12 @@ def _generate_first_part(names, lastname, second_lastname=""):
 
 def _generate_numeric_part(birth_date):
     """Recibe la fecha de nacimiento como cadena y la transforma en la
-    parte numérica del CURP o RFC (en este caso son idénticas)"""
+    parte numérica del CURP o RFC (son idénticas).
+
+    ¿Deberíamos recibir la fecha en otro fomato o como fecha de Python?
+    Este es un gran ejemplo de un lugar en el que no son necesarias las fechas
+    con hora y mucho menos con zona horaria.
+    """
     birth_date = birth_date.strip()
     parts = birth_date.split("-")
     day, month, year = parts[0], parts[1], parts[2]
@@ -83,7 +88,7 @@ def curp(
     bool
         True if successful, False otherwise.
     """
-    _generate_common_part(names, lastname, second_lastname, birth_date)
+    first_part = _generate_common_part(names, lastname, second_lastname, birth_date)
     if sex not in ("h", "H", "m", "M"):
         raise "Sex formatting is incorrect, must be an 'h' form men or a 'm' for women"
-    # f"{sex}"
+    return f"{first_part}{sex}"
