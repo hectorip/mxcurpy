@@ -91,4 +91,19 @@ def curp(
     first_part = _generate_common_part(names, lastname, second_lastname, birth_date)
     if sex not in ("h", "H", "m", "M"):
         raise "Sex formatting is incorrect, must be an 'h' form men or a 'm' for women"
-    return f"{first_part}{sex}"
+
+    # TODO: Obtener el estado de nacimiento y código
+    # TODO: obtener letras extras del nombre"
+    # 1. Primera Consonante interna del apellido paterno
+    # 2. Primera Consonante interna del apellido materno
+    # 3. Primera Consonante interna del nombre
+
+    state_code = "XX"
+    fic_last_name = "X"
+    fic_second_last_name = "X"
+    fic_name = "X"
+
+    #Los últimos 2 caracteres son el dígito verificador, generados más o menos aleatoriamente al momento de la creación del CURP
+    # por la entidad encargada de ello. No podemos calcularlos, por lo que devolvemos 00.
+
+    return f"{first_part}{sex}{state_code}{fic_last_name}{fic_second_last_name}{fic_name}00"
