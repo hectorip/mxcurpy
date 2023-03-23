@@ -4,8 +4,9 @@ from utilities import (
     replace_accented_char,
     get_first_consonant,
     get_first_vowel,
+    get_first_internal_consonant,
 )
-from mxcurpy import _generate_first_part, _generate_numeric_part, _generate_common_part
+from mxcurpy import _generate_first_part, _generate_numeric_part, _generate_common_part, curp
 
 
 @pytest.mark.parametrize("t_input,expected", (("á", "a"), ("é", "e"), ("ü", "u")))
@@ -84,8 +85,24 @@ def test_generate_common_part(t_input, expected):
         _generate_common_part(names, lastname, second_lastname, birth_date) == expected
     )
 
+@pytest.mark.parametrize(
+    "t_input,expected", (
+        ("Héctor", "c"),
+        ("Iván", "v"),
+        ("aei", ""),
+        ("", ""),
+        ("Patricio", "t"),
+        ("Moreno", "r"),
+     )
+ )
+def test_get_first_internal_consonant(t_input, expected):
+    assert get_first_internal_consonant(t_input) == expected
 
-def testingBoolean():
-    a = True
-    if a == "True":
-        print("True")
+@pytest.mark.parametrize(
+    "t_input,expected", (
+        (("Héctor Iván", "Patricio", "Moreno", "12-08-1989", "du", "h"), "pamh890812hdftrc00"),
+    )
+)
+def test_curp(t_input, expected):
+    names, lastname, second_lastname, birth_date, state, sex = t_input
+    assert curp(names, lastname, second_lastname, birth_date, state, sex) == expected

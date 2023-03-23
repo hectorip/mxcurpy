@@ -1,5 +1,4 @@
-from re import A
-from string import ascii_letters, ascii_lowercase
+from string import ascii_letters
 
 LETTERS = set(ascii_letters)
 ACCENTED_VOWELS = {"á": "a", "é": "e", "í": "i", "ó": "o","ü": "u", "ú": "u"}
@@ -21,8 +20,8 @@ def replace_accented_char(letter):
 
 
 def clean_and_format_string(text):
-    """Elimina símbolos, espacios y devuelve la cadena en minúsculas, todas las demás cadenas de
-    este paquete dependen de recibir la función
+    """Elimina símbolos, espacios y devuelve la cadena en minúsculas, todas las demás
+    cadenas de este paquete dependen de recibir la función
     """
     text = text.lower()
     text = [replace_accented_char(c) for c in text]
@@ -46,3 +45,12 @@ def get_first_vowel(text):
         if c in VOWELS:
             return c
     return ""
+
+
+@cleaned_string
+def get_first_internal_consonant(text, default=""):
+    """Extrae la primera consonante interna de una palabra"""
+    for c in text[1:]:
+        if c not in VOWELS:
+            return c
+    return default

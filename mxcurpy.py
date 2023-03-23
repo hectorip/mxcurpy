@@ -17,6 +17,7 @@ este dato puede ser diferente al oficial.
 from utilities import (
     get_first_vowel,
     clean_and_format_string,
+    get_first_internal_consonant
 )
 
 
@@ -89,6 +90,9 @@ def curp(
         True if successful, False otherwise.
     """
     first_part = _generate_common_part(names, lastname, second_lastname, birth_date)
+    # TODO: Manejar excepciones específicas de CURP
+
+
     if sex not in ("h", "H", "m", "M"):
         raise "Sex formatting is incorrect, must be an 'h' form men or a 'm' for women"
 
@@ -98,10 +102,10 @@ def curp(
     # 2. Primera Consonante interna del apellido materno
     # 3. Primera Consonante interna del nombre
 
-    state_code = "XX"
-    fic_last_name = "X"
-    fic_second_last_name = "X"
-    fic_name = "X"
+    state_code = "XX" # TODO: Obtener el código del estado de nacimiento
+    fic_last_name = get_first_internal_consonant(lastname)
+    fic_second_last_name = get_first_internal_consonant(second_lastname)
+    fic_name = get_first_internal_consonant(names)
 
     #Los últimos 2 caracteres son el dígito verificador, generados más o menos aleatoriamente al momento de la creación del CURP
     # por la entidad encargada de ello. No podemos calcularlos, por lo que devolvemos 00.
