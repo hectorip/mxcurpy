@@ -9,6 +9,7 @@ from utilities import (
 from mxcurpy import _generate_first_part, _generate_numeric_part, _generate_common_part, curp
 
 
+
 @pytest.mark.parametrize("t_input,expected", (("á", "a"), ("é", "e"), ("ü", "u")))
 def test_remove_accent(t_input, expected):
     assert replace_accented_char(t_input) == expected

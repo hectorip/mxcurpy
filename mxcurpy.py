@@ -20,6 +20,11 @@ from utilities import (
     get_first_internal_consonant
 )
 
+STATES = (
+    ("AS", "AGUASCALIENTES"),
+    ("BC", "BAJA CALIFORNIA"),
+)
+
 
 def _generate_first_part(names, lastname, second_lastname=""):
 
