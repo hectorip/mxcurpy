@@ -20,9 +20,41 @@ from utilities import (
     get_first_internal_consonant
 )
 
+# códigos de estados de la república mexicana
 STATES = (
     ("AS", "AGUASCALIENTES"),
     ("BC", "BAJA CALIFORNIA"),
+    ("BS", "BAJA CALIFORNIA SUR"),
+    ("CC", "CAMPECHE"),
+    ("CS", "COAHUILA"),
+    ("CL", "COLIMA"),
+    ("CM", "CHIAPAS"),
+    ("CH", "CHIHUAHUA"),
+    ("DF", "DISTRITO FEDERAL"),
+    ("DG", "DURANGO"),
+    ("GT", "GUANAJUATO"),
+    ("GR", "GUERRERO"),
+    ("HG", "HIDALGO"),
+    ("JC", "JALISCO"),
+    ("MC", "MEXICO"),
+    ("MN", "MICHOACAN"),
+    ("MS", "MORELOS"),
+    ("NT", "NAYARIT"),
+    ("NL", "NUEVO LEON"),
+    ("OC", "OAXACA"),
+    ("PL", "PUEBLA"),
+    ("QT", "QUERETARO"),
+    ("QR", "QUINTANA ROO"),
+    ("SP", "SAN LUIS POTOSI"),
+    ("SL", "SINALOA"),
+    ("SR", "SONORA"),
+    ("TC", "TABASCO"),
+    ("TS", "TAMAULIPAS"),
+    ("TL", "TLAXCALA"),
+    ("VZ", "VERACRUZ"),
+    ("YN", "YUCATAN"),
+    ("ZS", "ZACATECAS"),
+    ("NE", "NACIDO EN EL EXTRANJERO"),
 )
 
 
