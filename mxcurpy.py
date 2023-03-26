@@ -19,44 +19,7 @@ from utilities import (
     clean_and_format_string,
     get_first_internal_consonant
 )
-
-# códigos de estados de la república mexicana
-STATES = (
-    ("AS", "AGUASCALIENTES"),
-    ("BC", "BAJA CALIFORNIA"),
-    ("BS", "BAJA CALIFORNIA SUR"),
-    ("CC", "CAMPECHE"),
-    ("CS", "COAHUILA"),
-    ("CL", "COLIMA"),
-    ("CM", "CHIAPAS"),
-    ("CH", "CHIHUAHUA"),
-    ("DF", "DISTRITO FEDERAL"),
-    ("DG", "DURANGO"),
-    ("GT", "GUANAJUATO"),
-    ("GR", "GUERRERO"),
-    ("HG", "HIDALGO"),
-    ("JC", "JALISCO"),
-    ("MC", "MEXICO"),
-    ("MN", "MICHOACAN"),
-    ("MS", "MORELOS"),
-    ("NT", "NAYARIT"),
-    ("NL", "NUEVO LEON"),
-    ("OC", "OAXACA"),
-    ("PL", "PUEBLA"),
-    ("QT", "QUERETARO"),
-    ("QR", "QUINTANA ROO"),
-    ("SP", "SAN LUIS POTOSI"),
-    ("SL", "SINALOA"),
-    ("SR", "SONORA"),
-    ("TC", "TABASCO"),
-    ("TS", "TAMAULIPAS"),
-    ("TL", "TLAXCALA"),
-    ("VZ", "VERACRUZ"),
-    ("YN", "YUCATAN"),
-    ("ZS", "ZACATECAS"),
-    ("NE", "NACIDO EN EL EXTRANJERO"),
-)
-
+from states import States
 
 def _generate_first_part(names, lastname, second_lastname=""):
 
@@ -117,8 +80,7 @@ def curp(
     birth_date
         Es la fecha de nacimiento de la persona en formato "dd-MM-yyyy", por ejemplo "27-01-1980"
     birth_state
-        Es el código del estado de nacimiento de la persona. La lista de códigos aceptados
-        la puedes sacar de aquí: TODO: Falta la lista oficial de códigos de estados.
+        El nombre del estado como cadena, puedes ver una lista completa en la documntación.
     sex
         Es el sexo de la persona, acepta 'H' o 'h' para hombres y 'M' o 'm' para mujeres.
     Returns
@@ -138,8 +100,7 @@ def curp(
     # 1. Primera Consonante interna del apellido paterno
     # 2. Primera Consonante interna del apellido materno
     # 3. Primera Consonante interna del nombre
-
-    state_code = "XX" # TODO: Obtener el código del estado de nacimiento
+    state_code = States.get_code(birth_state)
     fic_last_name = get_first_internal_consonant(lastname)
     fic_second_last_name = get_first_internal_consonant(second_lastname)
     fic_name = get_first_internal_consonant(names)
@@ -147,4 +108,4 @@ def curp(
     #Los últimos 2 caracteres son el dígito verificador, generados más o menos aleatoriamente al momento de la creación del CURP
     # por la entidad encargada de ello. No podemos calcularlos, por lo que devolvemos 00.
 
-    return f"{first_part}{sex}{state_code}{fic_last_name}{fic_second_last_name}{fic_name}00"
+    return f"{first_part}{sex}{state_code}{fic_last_name}{fic_second_last_name}{fic_name}00".upper()

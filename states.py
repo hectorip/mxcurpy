@@ -1,37 +1,53 @@
 class States:
     """A class to store all States of the country and help retrieve the code easily"""
-    STATES = (
-    ("AS", "AGUASCALIENTES"),
-    ("BC", "BAJA CALIFORNIA"),
-    ("BS", "BAJA CALIFORNIA SUR"),
-    ("CC", "CAMPECHE"),
-    ("CS", "COAHUILA"),
-    ("CL", "COLIMA"),
-    ("CM", "CHIAPAS"),
-    ("CH", "CHIHUAHUA"),
-    ("DF", "DISTRITO FEDERAL"),
-    ("DG", "DURANGO"),
-    ("GT", "GUANAJUATO"),
-    ("GR", "GUERRERO"),
-    ("HG", "HIDALGO"),
-    ("JC", "JALISCO"),
-    ("MC", "MEXICO"),
-    ("MN", "MICHOACAN"),
-    ("MS", "MORELOS"),
-    ("NT", "NAYARIT"),
-    ("NL", "NUEVO LEON"),
-    ("OC", "OAXACA"),
-    ("PL", "PUEBLA"),
-    ("QT", "QUERETARO"),
-    ("QR", "QUINTANA ROO"),
-    ("SP", "SAN LUIS POTOSI"),
-    ("SL", "SINALOA"),
-    ("SR", "SONORA"),
-    ("TC", "TABASCO"),
-    ("TS", "TAMAULIPAS"),
-    ("TL", "TLAXCALA"),
-    ("VZ", "VERACRUZ"),
-    ("YN", "YUCATAN"),
-    ("ZS", "ZACATECAS"),
-    ("NE", "NACIDO EN EL EXTRANJERO"),
-)
+    STATES = {
+        "AGUASCALIENTES": ("AS",),
+        "BAJA CALIFORNIA": ("BC",),
+        "BAJA CALIFORNIA SUR": ("BS",),
+        "CAMPECHE": ("CC",),
+        "COAHUILA": ("CS",),
+        "COLIMA": ("CL",),
+        "CHIAPAS": ("CM",),
+        "CHIHUAHUA": ("CH",),
+        "DISTRITO FEDERAL": ("DF",),
+        "CDMX": ("DF",),
+        "CIUDAD DE MÉXICO": ("DF",),
+        "DURANGO": ("DG",),
+        "GUANAJUATO": ("GT",),
+        "GUERRERO": ("GR",),
+        "HIDALGO": ("HG",),
+        "JALISCO": ("JC",),
+        "MEXICO": ("MC",),
+        "MICHOACAN": ("MN",),
+        "MORELOS": ("MS",),
+        "NAYARIT": ("NT",),
+        "NUEVO LEON": ("NL",),
+        "OAXACA": ("OC",),
+        "PUEBLA": ("PL",),
+        "QUERETARO": ("QT",),
+        "QUINTANA ROO": ("QR",),
+        "SAN LUIS POTOSI": ("SP",),
+        "SINALOA": ("SL",),
+        "SONORA": ("SR",),
+        "TABASCO": ("TC",),
+        "TAMAULIPAS": ("TS",),
+        "TLAXCALA": ("TL",),
+        "VERACRUZ": ("VZ",),
+        "YUCATAN": ("YN",),
+        "ZACATECAS": ("ZS",),
+        "NACIDO EN EL EXTRANJERO": ("NE",),
+    }
+
+
+    @staticmethod
+    def get_code(state):
+        """Get the code of a state"""
+        state = state.upper().strip()
+        return States.STATES[state][0]
+
+    @staticmethod
+    def get_state(code):
+        """Get the state from a code"""
+        for state, codes in States.STATES.items():
+            if code in codes:
+                return state

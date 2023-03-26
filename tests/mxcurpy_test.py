@@ -101,7 +101,7 @@ def test_get_first_internal_consonant(t_input, expected):
 
 @pytest.mark.parametrize(
     "t_input,expected", (
-        (("Héctor Iván", "Patricio", "Moreno", "12-08-1989", "du", "h"), "pamh890812hdftrc00"),
+        (("Héctor Iván", "Patricio", "Moreno", "12-08-1989", "distrito federal", "h"), "PAMH890812HDFTRC00"),
     )
 )
 def test_curp(t_input, expected):
