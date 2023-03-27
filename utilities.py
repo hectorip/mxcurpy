@@ -1,7 +1,7 @@
 from string import ascii_letters
 
 LETTERS = set(ascii_letters)
-ACCENTED_VOWELS = {"á": "a", "é": "e", "í": "i", "ó": "o","ü": "u", "ú": "u"}
+ACCENTED_VOWELS = {"á": "a", "é": "e", "í": "i", "ó": "o","ü": "u", "ú": "u", "ñ": "x"}
 VOWELS = set(("a", "e", "i", "o", "u"))
 
 
