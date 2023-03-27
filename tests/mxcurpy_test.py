@@ -9,7 +9,6 @@ from utilities import (
 from mxcurpy import _generate_first_part, _generate_numeric_part, curp
 
 
-
 @pytest.mark.parametrize("t_input,expected", (("á", "a"), ("é", "e"), ("ü", "u")))
 def test_remove_accent(t_input, expected):
     assert replace_accented_char(t_input) == expected
@@ -54,6 +53,7 @@ def test_extract_first_vowel(t_input, expected):
         (("Héctor Iván", "Patricio", "Moreno"), "pamh"),
         (("Armando", "Palermo", "Torres"), "pata"),
         (("Héctor Iván", "Patricio", ""), "paxh"),
+        (("ALBERTO", "ñANDO", "RODRIGUEZ"), "xara")
     ),
 )
 def test_generate_first_part(t_input, expected):
@@ -103,9 +103,9 @@ def test_get_first_internal_consonant(t_input, expected):
     "t_input,expected", (
         (("Héctor Iván", "Patricio", "Moreno", "12-08-1989", "distrito federal", "h"), "PAMH890812HDFTRC00"),
         (("Andrea", "Vázquez", "Cárdenas", "12-08-1989", "distrito federal", "m"), "VXCA890812MDFZRN00"),
+
     )
 )
 def test_curp(t_input, expected):
     names, lastname, second_lastname, birth_date, state, sex = t_input
     assert curp(names, lastname, second_lastname, birth_date, state, sex) == expected
-g

@@ -22,6 +22,7 @@ from utilities import (
 from states import States
 from non_convenient_words import CURP_NON_CONVENIENT_WORDS
 
+
 def _generate_first_part(names, lastname, second_lastname=""):
 
     # Puede que algunos usuarios no tengan segundo apellido, y se tiene que usar una X
@@ -56,6 +57,7 @@ def _replace_exceptions_curp(curp):
     """Reemplaza las exceptiones de palabras no convenientes formadas
     por combinaciones de letras en el CURP"""
     return CURP_NON_CONVENIENT_WORDS.get(curp.upper(), curp)
+
 
 def curp(
     names: str,
