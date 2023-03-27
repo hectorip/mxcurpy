@@ -6,7 +6,7 @@ from utilities import (
     get_first_vowel,
     get_first_internal_consonant,
 )
-from mxcurpy import _generate_first_part, _generate_numeric_part, _generate_common_part, curp
+from mxcurpy import _generate_first_part, _generate_numeric_part, curp
 
 
 
@@ -73,18 +73,18 @@ def test_generate_numeric_part(t_input, expected):
     assert _generate_numeric_part(t_input) == expected
 
 
-@pytest.mark.parametrize(
-    "t_input,expected",
-    (
-        (("Héctor Iván", "Patricio", "Moreno", "12-08-1989"), "pamh890812"),
-        (("Armando", "Palermo", "Torres", "12-12-1936"), "pata361212"),
-    ),
-)
-def test_generate_common_part(t_input, expected):
-    names, lastname, second_lastname, birth_date = t_input
-    assert (
-        _generate_common_part(names, lastname, second_lastname, birth_date) == expected
-    )
+# @pytest.mark.parametrize(
+#     "t_input,expected",
+#     (
+#         (("Héctor Iván", "Patricio", "Moreno", "12-08-1989"), "pamh890812"),
+#         (("Armando", "Palermo", "Torres", "12-12-1936"), "pata361212"),
+#     ),
+# )
+# def test_generate_common_part(t_input, expected):
+#     names, lastname, second_lastname, birth_date = t_input
+#     assert (
+#         _generate_common_part(names, lastname, second_lastname, birth_date) == expected
+#     )
 
 @pytest.mark.parametrize(
     "t_input,expected", (
@@ -102,8 +102,10 @@ def test_get_first_internal_consonant(t_input, expected):
 @pytest.mark.parametrize(
     "t_input,expected", (
         (("Héctor Iván", "Patricio", "Moreno", "12-08-1989", "distrito federal", "h"), "PAMH890812HDFTRC00"),
+        (("Andrea", "Vázquez", "Cárdenas", "12-08-1989", "distrito federal", "m"), "VXCA890812MDFZRN00"),
     )
 )
 def test_curp(t_input, expected):
     names, lastname, second_lastname, birth_date, state, sex = t_input
     assert curp(names, lastname, second_lastname, birth_date, state, sex) == expected
+g

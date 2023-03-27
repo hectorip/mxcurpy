@@ -20,6 +20,7 @@ from utilities import (
     get_first_internal_consonant
 )
 from states import States
+from non_convenient_words import CURP_NON_CONVENIENT_WORDS
 
 def _generate_first_part(names, lastname, second_lastname=""):
 
@@ -51,11 +52,10 @@ def _generate_numeric_part(birth_date):
     return f"{year[2:]}{month}{day}"
 
 
-def _generate_common_part(names, lastname, second_lastname="", birth_date=""):
-    """Genera la parte común del CURP y del RFC es decir, la compuesta por el nombre
-    completo y la fecha de nacimiento"""
-    return f"{_generate_first_part(names, lastname, second_lastname)}{_generate_numeric_part(birth_date)}"
-
+def _replace_exceptions_curp(curp):
+    """Reemplaza las exceptiones de palabras no convenientes formadas
+    por combinaciones de letras en el CURP"""
+    return CURP_NON_CONVENIENT_WORDS.get(curp.upper(), curp)
 
 def curp(
     names: str,
@@ -88,8 +88,8 @@ def curp(
     bool
         True if successful, False otherwise.
     """
-    first_part = _generate_common_part(names, lastname, second_lastname, birth_date)
-    # TODO: Manejar excepciones específicas de CURP
+    alphabetic_chars = _generate_first_part(names, lastname, second_lastname)
+    first_part = f"{_replace_exceptions_curp(alphabetic_chars)}{_generate_numeric_part(birth_date)}"
 
 
     if sex not in ("h", "H", "m", "M"):
