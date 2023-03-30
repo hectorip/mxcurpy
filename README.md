@@ -9,6 +9,15 @@ POBLACIÓN)
 
 RFC:
 
+
+## Estado actual del proyecto
+
+Por el momento está funcionando la creación de CURP, por lo que he decidido liberarlo para poder usarlo.
+
+## Uso
+
+
+
 ## LICENCIA
 
 MIT

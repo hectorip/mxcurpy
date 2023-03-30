@@ -123,7 +123,7 @@ def test_get_first_internal_consonant(t_input, expected):
         ),
         (
             ("ROCIO", "RIVA PALACIO", "CRUZ", "12-12-1936", "distrito federal", "m"),
-            "RICR361212HDFVRC00",
+            "RICR361212MDFVRC00",
         ),
     ),
 )
