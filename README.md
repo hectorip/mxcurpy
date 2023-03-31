@@ -16,7 +16,53 @@ Por el momento está funcionando la creación de CURP, por lo que he decidido li
 
 ## Uso
 
+```python
+from mxcurpy import curp
 
+my_curp = curp(names="Juan José", lastname="Martínez", second_lastname="Pérez", birth_date="12-08-1989", birth_state="Durango", sex="h")
+# Genera la CURP
+
+```
+
+## Lista de estados válidos
+
+Estados:
+
+* "AGUASCALIENTES"
+* "BAJA CALIFORNIA"
+* "BAJA CALIFORNIA SUR"
+* "CAMPECHE"
+* "COAHUILA"
+* "COLIMA"
+* "CHIAPAS"
+* "CHIHUAHUA"
+* "DISTRITO FEDERAL"
+* "CDMX"
+* "CIUDAD DE MEXICO"
+* "DURANGO"
+* "GUANAJUATO"
+* "GUERRERO"
+* "HIDALGO"
+* "JALISCO"
+* "MEXICO"
+* "MICHOACAN"
+* "MORELOS"
+* "NAYARIT"
+* "NUEVO LEON"
+* "OAXACA"
+* "PUEBLA"
+* "QUERETARO"
+* "QUINTANA ROO"
+* "SAN LUIS POTOSI"
+* "SINALOA"
+* "SONORA"
+* "TABASCO"
+* "TAMAULIPAS"
+* "TLAXCALA"
+* "VERACRUZ"
+* "YUCATAN"
+* "ZACATECAS"
+* "NACIDO EN EL EXTRANJERO"
 
 ## LICENCIA
 

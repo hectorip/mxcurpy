@@ -17,7 +17,7 @@ este dato puede ser diferente al oficial.
 from utilities import (
     get_first_vowel,
     clean_and_format_string,
-    get_first_internal_consonant
+    get_first_internal_consonant,
 )
 from states import States
 from non_convenient_words import CURP_NON_CONVENIENT_WORDS
@@ -82,7 +82,7 @@ def curp(
     birth_date
         Es la fecha de nacimiento de la persona en formato "dd-MM-yyyy", por ejemplo "27-01-1980"
     birth_state
-        El nombre del estado como cadena, puedes ver una lista completa en la documntación.
+        El nombre del estado como cadena, puedes ver una lista completa en la documentación.
     sex
         Es el sexo de la persona, acepta 'H' o 'h' para hombres y 'M' o 'm' para mujeres.
     Returns
@@ -97,8 +97,6 @@ def curp(
     if sex not in ("h", "H", "m", "M"):
         raise "Sex formatting is incorrect, must be an 'h' form men or a 'm' for women"
 
-    # TODO: Obtener el estado de nacimiento y código
-    # TODO: obtener letras extras del nombre"
     # 1. Primera Consonante interna del apellido paterno
     # 2. Primera Consonante interna del apellido materno
     # 3. Primera Consonante interna del nombre

@@ -1,12 +1,13 @@
 from string import ascii_letters
 
 LETTERS = set(ascii_letters)
-ACCENTED_VOWELS = {"á": "a", "é": "e", "í": "i", "ó": "o","ü": "u", "ú": "u", "ñ": "x"}
+ACCENTED_VOWELS = {"á": "a", "é": "e", "í": "i", "ó": "o", "ü": "u", "ú": "u", "ñ": "x"}
 VOWELS = set(("a", "e", "i", "o", "u"))
 
 
 def cleaned_string(function):
-    """Decorador para asegurarnos de que las funciones que procesan cadenas trabajan sobre"""
+    """Decorador para asegurarnos de que las funciones que procesan cadenas trabajan sobre
+    cadenas limpias y formateadas"""
 
     def wrapper(text):
         return function(clean_and_format_string(text))

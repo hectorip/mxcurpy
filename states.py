@@ -1,5 +1,9 @@
+from utilities import replace_accented_char
+
+
 class States:
     """A class to store all States of the country and help retrieve the code easily"""
+
     STATES = {
         "AGUASCALIENTES": ("AS",),
         "BAJA CALIFORNIA": ("BC",),
@@ -11,7 +15,7 @@ class States:
         "CHIHUAHUA": ("CH",),
         "DISTRITO FEDERAL": ("DF",),
         "CDMX": ("DF",),
-        "CIUDAD DE MÉXICO": ("DF",),
+        "CIUDAD DE MEXICO": ("DF",),
         "DURANGO": ("DG",),
         "GUANAJUATO": ("GT",),
         "GUERRERO": ("GR",),
@@ -38,11 +42,12 @@ class States:
         "NACIDO EN EL EXTRANJERO": ("NE",),
     }
 
-
     @staticmethod
     def get_code(state):
         """Get the code of a state"""
         state = state.upper().strip()
+        state = [replace_accented_char(c) for c in state]
+        state = "".join(state)
         return States.STATES[state][0]
 
     @staticmethod
