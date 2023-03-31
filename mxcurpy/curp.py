@@ -14,13 +14,13 @@ este dato puede ser diferente al oficial.
 
 """
 
-from utilities import (
+from .utils import (
     get_first_vowel,
     clean_and_format_string,
     get_first_internal_consonant,
 )
-from states import States
-from non_convenient_words import CURP_NON_CONVENIENT_WORDS
+from .states import States
+from .non_convenient_words import CURP_NON_CONVENIENT_WORDS
 
 
 def _generate_first_part(names, lastname, second_lastname=""):

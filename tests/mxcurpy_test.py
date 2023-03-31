@@ -1,12 +1,12 @@
 import pytest
-from utilities import (
+from mxcurpy.utils import (
     clean_and_format_string,
     replace_accented_char,
     get_first_consonant,
     get_first_vowel,
     get_first_internal_consonant,
 )
-from mxcurpy import _generate_first_part, _generate_numeric_part, curp
+from mxcurpy.curp import _generate_first_part, _generate_numeric_part, curp
 
 
 @pytest.mark.parametrize("t_input,expected", (("á", "a"), ("é", "e"), ("ü", "u")))

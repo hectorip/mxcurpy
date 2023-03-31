@@ -1,9 +1,12 @@
 [tool.poetry]
 authors = ["Héctor Iván Patricio Moreno <hectorivanpatriciomoreno@gmail.com>"]
 description = "Compute CURP and RFC for Mexican Citizens"
+homepage = "https://github.com/hectorip/mxcurpy"
+keywords = ["curp", "mexico"]
 license = "MIT"
 name = "mxcurpy"
-version = "0.1.1"
+readme = "README.md"
+version = "0.1.2"
 
 [tool.poetry.dependencies]
 python = "^3.6"

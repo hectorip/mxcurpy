@@ -1,4 +1,4 @@
-from utilities import replace_accented_char
+from .utils import replace_accented_char
 
 
 class States:

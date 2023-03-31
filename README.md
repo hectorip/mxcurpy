@@ -4,8 +4,8 @@ Generación de Clave Única de Registro de Población y el Registro Federal de C
 
 Documentos en los que está basado este paquete:
 
-CURP: [/docs/dof18102021.pdf](INSTRUCTIVO NORMATIVO PARA LA ASIGNACIÓN DE LA CLAVE ÚNICA DE REGISTRO DE
-POBLACIÓN)
+CURP: (/docs/dof18102021.pdf)[INSTRUCTIVO NORMATIVO PARA LA ASIGNACIÓN DE LA CLAVE ÚNICA DE REGISTRO DE
+POBLACIÓN]
 
 RFC:
 
@@ -20,6 +20,7 @@ Por el momento está funcionando la creación de CURP, por lo que he decidido li
 from mxcurpy import curp
 
 my_curp = curp(names="Juan José", lastname="Martínez", second_lastname="Pérez", birth_date="12-08-1989", birth_state="Durango", sex="h")
+
 # Genera la CURP
 
 ```

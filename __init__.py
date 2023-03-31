@@ -1,1 +1,2 @@
-from mxcurpy import curp, utilities, states, non_convenient_words
+from mxcurpy import curp
+import utilities
