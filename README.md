@@ -25,6 +25,8 @@ my_curp = curp(names="Juan José", lastname="Martínez", second_lastname="Pérez
 ```
 
 ## Consideraciones
+
+
 ## Lista de estados válidos
 
 Estados:

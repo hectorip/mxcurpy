@@ -118,6 +118,17 @@ def test_get_first_internal_consonant(t_input, expected):
             "PAMH890812HDFTRC00",
         ),
         (
+            (
+                "Héctor Iván",
+                "Patricio",
+                "Moreno",
+                "12-08-1989",
+                "ciudad de méxico",
+                "h",
+            ),
+            "PAMH890812HDFTRC00",
+        ),
+        (
             ("Andrea", "Vázquez", "Cárdenas", "12-08-1989", "distrito federal", "m"),
             "VXCA890812MDFZRN00",
         ),

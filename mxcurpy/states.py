@@ -47,7 +47,7 @@ class States:
         """Get the code of a state"""
         state = state.lower().strip()
         state = [replace_accented_char(c) for c in state]
-        state = "".join(state.upper())
+        state = "".join(state).upper()
         return States.STATES[state][0]
 
     @staticmethod
