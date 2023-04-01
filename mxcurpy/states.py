@@ -45,9 +45,9 @@ class States:
     @staticmethod
     def get_code(state):
         """Get the code of a state"""
-        state = state.upper().strip()
+        state = state.lower().strip()
         state = [replace_accented_char(c) for c in state]
-        state = "".join(state)
+        state = "".join(state.upper())
         return States.STATES[state][0]
 
     @staticmethod
