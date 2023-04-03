@@ -24,8 +24,12 @@ my_curp = curp(names="Juan José", lastname="Martínez", second_lastname="Pérez
 
 ```
 
-## Consideraciones
+## Limitaciones
 
+## CURP
+
+Los dod últimos carácteres al final de la CURP oficial son generados por la entidad de gobierno encargada de asignación de las curps al momento de genrarla, con el objetivo de
+evitar duplicados, por lo que no podemos generarlos con seguridad, por eso estos dos carácteres siempre serán "00".
 
 ## Lista de estados válidos
 
