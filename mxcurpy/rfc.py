@@ -1,10 +1,16 @@
-"""RFC
+"""MXCURPY
 
-Calcula el Registro Federal de Conritbuyente (RFC) de una persona física.
-
+Esta biblioteca te ayudará a calcular el CURP (Clave Única de Registro de
+Población de México) y el RFC (Registro Federal de Conritbuyente).
 
 Notas
 ----
+Los únicos datos que no podemos calcular son el dígito
+verificador del CURP porque es asignado durante la primera creación del CURP en
+la entidad encargada de ello.
+
+El cálculo de la homoclave sigue el algoritmo oficial pero en algunas ocasiones
+este dato puede ser diferente al oficial.
 
 """
 
