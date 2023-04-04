@@ -1,59 +1,27 @@
-"""MXCURPY
+"""RFC
 
 Esta biblioteca te ayudará a calcular el CURP (Clave Única de Registro de
 Población de México) y el RFC (Registro Federal de Conritbuyente).
 
 Notas
 ----
-Los únicos datos que no podemos calcular son el dígito
-verificador del CURP porque es asignado durante la primera creación del CURP en
-la entidad encargada de ello.
+El cálculo de la homclave sigue un algoritmo que se encontró en un documento de 2006,
+ya que no se encontró un documento oficial más reciente y todas las
+fuentes mencionan que la forma de obtner la homoclave es consultar al Servicio de
+Administración Tributaria (SAT).
 
-El cálculo de la homoclave sigue el algoritmo oficial pero en algunas ocasiones
-este dato puede ser diferente al oficial.
 
 """
 
 from .utils import (
-    get_first_vowel,
-    clean_and_format_string,
     get_first_internal_consonant,
 )
 from .states import States
 from .non_convenient_words import CURP_NON_CONVENIENT_WORDS
+from curp import _generate_first_part, _generate_numeric_part
 
 
-def _generate_first_part(names, lastname, second_lastname=""):
-
-    # Puede que algunos usuarios no tengan segundo apellido, y se tiene que usar una X
-    # Ponemos la "x" para extraerla como primera letra
-
-    if not second_lastname:
-        second_lastname = "x"
-    return clean_and_format_string(
-        f"{lastname[0]}{get_first_vowel(lastname)}{second_lastname[0]}{names[0]}"
-    )
-
-
-def _generate_numeric_part(birth_date):
-    """Recibe la fecha de nacimiento como cadena y la transforma en la
-    parte numérica del CURP o RFC (son idénticas).
-
-    ¿Deberíamos recibir la fecha en otro fomato o como fecha de Python?
-    Este es un gran ejemplo de un lugar en el que no son necesarias las fechas
-    con hora y mucho menos con zona horaria.
-    """
-    birth_date = birth_date.strip()
-    parts = birth_date.split("-")
-    day, month, year = parts[0], parts[1], parts[2]
-    if len(day) < 2:
-        day = "0" + day
-    if len(month) < 2:
-        month = "0" + month
-    return f"{year[2:]}{month}{day}"
-
-
-def _replace_exceptions_curp(curp):
+def _replace_exceptions_rfc(curp):
     """Reemplaza las exceptiones de palabras no convenientes formadas
     por combinaciones de letras en el CURP"""
     return CURP_NON_CONVENIENT_WORDS.get(curp.upper(), curp)
@@ -90,7 +58,6 @@ def curp(
     bool
         True if successful, False otherwise.
     """
-    print(clean_and_format_string(lastname))
     alphabetic_chars = _generate_first_part(names, lastname, second_lastname)
     first_part = f"{_replace_exceptions_curp(alphabetic_chars)}{_generate_numeric_part(birth_date)}"
 

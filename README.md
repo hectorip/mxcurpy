@@ -9,7 +9,6 @@ POBLACIÓN](/docs/dof18102021.pdf)
 
 **RFC**: [Instructivo RFC-2006](/docs/RFC-2006.pdf). Este es un instructivo antiguo, del 2006, ya que no he encontrado documentos más recientes públicos, pero estoy investigando si hay algún documento normativo que se pueda conseguir. Digamos que el método oficial para conseguir el RFC es siempre preguntándole al Sistema de Administración Tributaria (SAT), también según los documentos oficiales.
 
-
 ## Estado actual del proyecto
 
 Por el momento está funcionando la creación de CURP, por lo que he decidido liberarlo para poder usarlo.
