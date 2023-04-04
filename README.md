@@ -4,10 +4,10 @@ Generación de Clave Única de Registro de Población y el Registro Federal de C
 
 Documentos en los que está basado este paquete:
 
-CURP: (/docs/dof18102021.pdf)[INSTRUCTIVO NORMATIVO PARA LA ASIGNACIÓN DE LA CLAVE ÚNICA DE REGISTRO DE
-POBLACIÓN]
+CURP: [INSTRUCTIVO NORMATIVO PARA LA ASIGNACIÓN DE LA CLAVE ÚNICA DE REGISTRO DE
+POBLACIÓN](/docs/dof18102021.pdf)
 
-RFC:
+RFC: []()
 
 ## Estado actual del proyecto
 
@@ -24,12 +24,18 @@ my_curp = curp(names="Juan José", lastname="Martínez", second_lastname="Pérez
 
 ```
 
+## Casos excepcionales
+
+Si la persona es nacida en el extranjero, mandar la cadena `"NACIDO EN EL EXTRANJERO"` como estado de nacimiento.
+
 ## Limitaciones
 
-## CURP
+Aquí describimos algunas limitaciones que tenemos y que probablemente no se arreglen en un futuro cercano (ni lejano).
+
+### CURP
 
 Los dod últimos carácteres al final de la CURP oficial son generados por la entidad de gobierno encargada de asignación de las curps al momento de genrarla, con el objetivo de
-evitar duplicados, por lo que no podemos generarlos con seguridad, por eso estos dos carácteres siempre serán "00".
+evitar duplicados, por lo que no podemos generarlos con seguridad, por eso estos dos carácteres siempre serán `00`.
 
 ## Lista de estados válidos
 
