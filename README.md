@@ -13,6 +13,7 @@ POBLACIÓN](/docs/dof18102021.pdf)
 
 Por el momento está funcionando la creación de CURP, por lo que he decidido liberarlo para poder usarlo.
 
+
 ## Uso
 
 ```python
@@ -76,6 +77,7 @@ Estados:
 * "YUCATAN"
 * "ZACATECAS"
 * "NACIDO EN EL EXTRANJERO"
+* "NE"
 
 ## LICENCIA
 
