@@ -17,14 +17,13 @@ from .utils import (
     get_first_internal_consonant,
 )
 from .states import States
-from .non_convenient_words import CURP_NON_CONVENIENT_WORDS
 from curp import _generate_first_part, _generate_numeric_part
 
 
 def _replace_exceptions_rfc(curp):
     """Reemplaza las exceptiones de palabras no convenientes formadas
     por combinaciones de letras en el CURP"""
-    return CURP_NON_CONVENIENT_WORDS.get(curp.upper(), curp)
+    return RFC_NON_CONVENIENT_WORDS.get(curp.upper(), curp)
 
 
 def curp(
@@ -32,8 +31,6 @@ def curp(
     lastname: str,
     second_lastname: str,
     birth_date: str,
-    birth_state: str,
-    sex: str,
 ):
     """Devuelve el CURP bien formado usando los datos básicos.
     Nota: el dígito verificador no es correcto porque es asignado al momento de
@@ -59,7 +56,7 @@ def curp(
         True if successful, False otherwise.
     """
     alphabetic_chars = _generate_first_part(names, lastname, second_lastname)
-    first_part = f"{_replace_exceptions_curp(alphabetic_chars)}{_generate_numeric_part(birth_date)}"
+    first_part = f"{_replace_exceptions_rfc(alphabetic_chars)}{_generate_numeric_part(birth_date)}"
 
     if sex not in ("h", "H", "m", "M"):
         raise "Sex formatting is incorrect, must be an 'h' form men or a 'm' for women"

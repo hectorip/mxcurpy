@@ -105,7 +105,8 @@ def curp(
     fic_second_last_name = get_first_internal_consonant(second_lastname)
     fic_name = get_first_internal_consonant(names)
 
-    # Los últimos 2 caracteres son el dígito verificador, generados más o menos aleatoriamente al momento de la creación del CURP
+    # Los últimos 2 caracteres son el dígito verificador, generados más o menos aleatoriamente
+    # al momento de la creación del CURP
     # por la entidad encargada de ello. No podemos calcularlos, por lo que devolvemos 00.
 
     return f"{first_part}{sex}{state_code}{fic_last_name}{fic_second_last_name}{fic_name}00".upper()
