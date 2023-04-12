@@ -82,13 +82,44 @@ CURP_NON_CONVENIENT_WORDS = {
     "LOCA": "LXCA",
 }
 
-"""
-BUEI BUEX BUEY BUEX
-CACA CACX CACO CACX
-CAGA CAGX CAGO CAGX
-CAKA CAKX CAKO CAKX
-COGE COGX COJA COJX
-COJE COJX COJI COJX
-COJO COJX CULO CULX
-FETO FETX GUEY GUEX
-"""
+RFC_NON_CONVENIENT_WORDS = {
+    "BUEI": "BUEX",
+    "KOGE": "KOGX",
+    "BUEY": "BUEX",
+    "KOJO": "KOJX",
+    "CACA": "CACX",
+    "KAKA": "KAKX",
+    "CACO": "CACX",
+    "KULO": "KULX",
+    "CAGA": "CAGX",
+    "MAME": "MAMX",
+    "CAGO": "CAGX",
+    "MAMO": "MAMX",
+    "CAKA": "CAKX",
+    "MEAR": "MEAX",
+    "COGE": "COGX",
+    "MEON": "MEOX",
+    "COJA": "COJX",
+    "MION": "MIOX",
+    "COJE": "COJX",
+    "MOCO": "MOCX",
+    "COJI": "COJX",
+    "MULA": "MULX",
+    "COJO": "COJX",
+    "PEDA": "PEDX",
+    "CULO": "CULX",
+    "PEDO": "PEDX",
+    "FETO": "FETX",
+    "PENE": "PENX",
+    "GUEY": "GUEX",
+    "PUTA": "PUTX",
+    "JOTO": "JOTX",
+    "PUTO": "PUTX",
+    "KACA": "KACX",
+    "QULO": "QULX",
+    "KACO": "KACX",
+    "RATA": "RATX",
+    "KAGA": "KAGX",
+    "RUIN": "RUIX",
+    "KAGO": "KAGX",
+}
