@@ -13,17 +13,14 @@ Administración Tributaria (SAT).
 
 """
 
-from .utils import (
-    get_first_internal_consonant,
-)
-from .states import States
-from curp import _generate_first_part, _generate_numeric_part
+from .curp import _generate_first_part, _generate_numeric_part
+from .non_convenient_words import RFC_NON_CONVENIENT_WORDS
 
 
-def _replace_exceptions_rfc(curp):
+def _replace_exceptions_rfc(rfc):
     """Reemplaza las exceptiones de palabras no convenientes formadas
     por combinaciones de letras en el CURP"""
-    return RFC_NON_CONVENIENT_WORDS.get(curp.upper(), curp)
+    return RFC_NON_CONVENIENT_WORDS.get(rfc.upper(), rfc)
 
 
 def curp(
@@ -61,17 +58,5 @@ def curp(
     if sex not in ("h", "H", "m", "M"):
         raise "Sex formatting is incorrect, must be an 'h' form men or a 'm' for women"
 
-    # 1. Primera Consonante interna del apellido paterno
-    # 2. Primera Consonante interna del apellido materno
-    # 3. Primera Consonante interna del nombre
-    state_code = States.get_code(birth_state)
-    fic_last_name = get_first_internal_consonant(lastname)
-    fic_second_last_name = get_first_internal_consonant(second_lastname)
-    fic_name = get_first_internal_consonant(names)
-
-    # Los últimos 2 caracteres son el dígito verificador, generados
-    # más o menos aleatoriamente al momento de la creación del CURP
-    # por la entidad encargada de ello. No podemos calcularlos,
-    # por lo que devolvemos 00.
-
-    return f"{first_part}{sex}{state_code}{fic_last_name}{fic_second_last_name}{fic_name}00".upper()
+    diff_key = "000"  # TODO: Calculate the diff key
+    return f"{first_part}{diff_key}".upper()
