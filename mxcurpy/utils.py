@@ -20,13 +20,16 @@ def replace_accented_char(letter):
     return ACCENTED_VOWELS.get(letter, letter)
 
 
-def clean_and_format_string(text):
+def clean_and_format_string(text, preserve_spaces=False):
     """Elimina símbolos, espacios y devuelve la cadena en minúsculas, todas las demás
     cadenas de este paquete dependen de recibir la función
     """
     text = text.lower()
     text = [replace_accented_char(c) for c in text]
-    text = "".join([c for c in text if c in LETTERS])
+    if preserve_spaces:
+        text = "".join([c for c in text if c in LETTERS or c == " "])
+    else:
+        text = "".join([c for c in text if c in LETTERS])
     return text
 
 
