@@ -11,10 +11,11 @@ POBLACIÓN](/docs/dof18102021.pdf)
 
 ## Estado actual del proyecto
 
-Por el momento está funcionando la creación de CURP, por lo que he decidido liberarlo para poder usarlo.
-
+Se puede generar tanto CURP como RFC, pero no se ha probado mucho, por lo que no se puede garantizar que funcione en todos los casos.
 
 ## Uso
+
+Generación de CURP:
 
 ```python
 from mxcurpy.curp import curp
@@ -23,6 +24,20 @@ my_curp = curp(names="Juan José", lastname="Martínez", second_lastname="Pérez
 
 # MAPJ890812HDGRRN00
 
+```
+
+Generación de RFC:
+
+```python
+from mxcurpy.rfc import rfc
+
+my_rfc = rfc(
+                "Emma",
+                "Gómez",
+                "Díaz",
+                "31-12-1956"
+            )
+# GODE561231GR8
 ```
 
 ## Casos excepcionales
