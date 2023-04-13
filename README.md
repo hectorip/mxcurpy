@@ -50,7 +50,7 @@ Aquí describimos algunas limitaciones que tenemos y que probablemente no se arr
 
 ### CURP
 
-Los dod últimos carácteres al final de la CURP oficial son generados por la entidad de gobierno encargada de asignación de las curps al momento de genrarla, con el objetivo de
+Los dos últimos carácteres al final de la CURP oficial son generados por la entidad de gobierno encargada de asignación de las curps al momento de generarla, con el objetivo de
 evitar duplicados, por lo que no podemos generarlos con seguridad, por eso estos dos carácteres siempre serán `00`.
 
 ## Lista de estados válidos
