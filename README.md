@@ -5,9 +5,9 @@ Generación de Clave Única de Registro de Población y el Registro Federal de C
 Documentos en los que está basado este paquete:
 
 **CURP**: [INSTRUCTIVO NORMATIVO PARA LA ASIGNACIÓN DE LA CLAVE ÚNICA DE REGISTRO DE
-POBLACIÓN](/docs/dof18102021.pdf)
+POBLACIÓN](https://github.com/hectorip/mxcurpy/blob/master/docs/dof18102021.pdf)
 
-**RFC**: [Instructivo RFC-2006](/docs/RFC-2006.pdf). Este es un instructivo antiguo, del 2006, ya que no he encontrado documentos más recientes públicos, pero estoy investigando si hay algún documento normativo que se pueda conseguir. Digamos que el método oficial para conseguir el RFC es siempre preguntándole al Sistema de Administración Tributaria (SAT), también según los documentos oficiales.
+**RFC**: [Instructivo RFC-2006](https://github.com/hectorip/mxcurpy/blob/master/docs/RFC-2006.pdf). Este es un instructivo antiguo, del 2006, ya que no he encontrado documentos más recientes públicos, pero estoy investigando si hay algún documento normativo que se pueda conseguir. Digamos que el método oficial para conseguir el RFC es siempre preguntándole al Sistema de Administración Tributaria (SAT), también según los documentos oficiales. Si tienes algún documento oficial más reciente, por favor, házmelo saber.
 
 ## Estado actual del proyecto
 
