@@ -28,6 +28,17 @@ from mxcurpy.rfc import rfc
             ),
             "GODE561231GR8",
         ),
+        (
+            (
+                "Norma Olivia",
+                "Muñoz",
+                "Aguilar",
+                "02-10-1978",
+                "distrito federal",
+                "m",
+            ),
+            "MUAN811001MWA",
+        ),
     ),
 )
 def test_rfc(t_input, expected):
